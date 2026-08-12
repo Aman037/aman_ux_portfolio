@@ -36,6 +36,17 @@ const projects = [
     bg: "from-[#e5eee6] via-[#f5efe7] to-[#e8dfd3]",
     accent: "#5c8d70",
   },
+  {
+    n: "04",
+    title: "Khet",
+    type: "UX / UI / HINDI-FIRST / ACCESSIBILITY",
+    sub: "AI-Assisted Farming Companion",
+    desc: "A Hindi-first, mobile-first UX concept helping farmers understand crop problems and take practical next steps — with photo, voice, and AI-assisted guidance.",
+    live: "https://khet-marg.vercel.app/",
+    case: "/projects/khet",
+    bg: "from-[#eef0e8] via-[#e4e8d8] to-[#d8dcc8]",
+    accent: "#3b4a3a",
+  },
 ];
 
 const certs = [
@@ -71,6 +82,52 @@ function HeartunePreview() {
           sizes="(max-width: 1024px) 100vw, 55vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080a13]/55 via-transparent to-transparent" />
+      </div>
+    </BrowserChrome>
+  );
+}
+
+function KhetPreview() {
+  return (
+    <BrowserChrome label="khet-marg.vercel.app">
+      <div className="relative flex h-[390px] items-center justify-center overflow-hidden bg-[#eef0e8] md:h-[470px]">
+        <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#c7b58d]/40 blur-3xl" />
+        <div className="absolute -bottom-20 -right-10 h-56 w-56 rounded-full bg-[#7a8c5a]/30 blur-3xl" />
+
+        {/* Phone mockup */}
+        <div className="relative h-[360px] w-[180px] overflow-hidden rounded-[28px] border-[8px] border-[#1c1c1c] bg-[#f5f4ef] shadow-[0_20px_60px_rgba(0,0,0,0.18)] md:h-[420px]">
+          <div className="absolute left-1/2 top-1.5 z-10 h-1.5 w-12 -translate-x-1/2 rounded-full bg-[#1c1c1c]" />
+          <div className="flex h-full flex-col px-3 pt-6">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-semibold text-[#3b4a3a]">खेत</span>
+              <span className="text-[7px] uppercase tracking-[.15em] text-[#999]">हिंदी</span>
+            </div>
+            <p className="mt-3 text-[11px] font-medium leading-tight text-[#1c1c1c]">फसल की समस्या पहचानें</p>
+            <p className="mt-1 text-[7px] leading-3 text-[#777]">Understand crop problems, take next steps.</p>
+
+            <div className="mt-3 space-y-2">
+              <div className="rounded-lg border border-[#d5d3ca] bg-white p-2">
+                <p className="text-[8px] font-medium text-[#3b4a3a]">फसल समस्या</p>
+                <p className="text-[6px] text-[#999]">Identify a problem</p>
+              </div>
+              <div className="rounded-lg border border-[#d5d3ca] bg-white p-2">
+                <p className="text-[8px] font-medium text-[#3b4a3a]">आज के काम</p>
+                <p className="text-[6px] text-[#999]">Today&apos;s tasks</p>
+              </div>
+              <div className="rounded-lg border border-[#d5d3ca] bg-white p-2">
+                <p className="text-[8px] font-medium text-[#3b4a3a]">मौसम</p>
+                <p className="text-[6px] text-[#999]">Weather</p>
+              </div>
+            </div>
+
+            <div className="mt-auto mb-2 flex justify-around border-t border-[#d5d3ca] pt-2">
+              <span className="text-[7px] font-medium text-[#3b4a3a]">होम</span>
+              <span className="text-[7px] text-[#999]">मेरी फसल</span>
+              <span className="text-[7px] text-[#999]">सहायता</span>
+              <span className="text-[7px] text-[#999]">सेटिंग</span>
+            </div>
+          </div>
+        </div>
       </div>
     </BrowserChrome>
   );
@@ -224,8 +281,10 @@ export default function HomePage() {
                     </div>
                   ) : i === 1 ? (
                     <div className="absolute inset-5 md:inset-8"><HeartunePreview /></div>
-                  ) : (
+                  ) : i === 2 ? (
                     <div className="absolute inset-5 md:inset-8"><DitePreview /></div>
+                  ) : (
+                    <div className="absolute inset-5 md:inset-8"><KhetPreview /></div>
                   )}
                 </div>
               </div>
